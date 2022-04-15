@@ -11,8 +11,8 @@ cp ~/git/k8s-CICD/k8s-config/node-hosts.txt ~/node-hosts.txt
 ansible-playbook -i node-hosts.txt ~/containerd_update.yaml
 cp ~/git/k8s-CICD/k8s-manifests/my_first_pod.yaml ~/my_first_pod.yaml
 kubectl apply -f ~/my_first_pod.yaml
+sleep 30
 kubectl get pods
-sleep 100
 read
 kubectl delete -f my_first_pod.yaml
 
