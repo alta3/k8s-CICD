@@ -25,7 +25,7 @@ CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o webserver .
 sudo docker build -t webby -f ~/git/k8s-CICD/k8s-docker/scratch .
 sudo docker run -d -p 2345:5000 registry:2
 sudo cp ~/git/k8s-CICD/k8s-config/bchd.registry_hosts /etc/hosts
-sudo cp ~/git/k8s-CICD/bchd-reg /etc/nginx/sites-enabled/reg
+sudo cp ~/git/k8s-CICD/k8s-config/bchd-reg /etc/nginx/sites-enabled/reg
 sudo nginx -s reload
 sudo docker tag webby bchd.registry/webby
 sleep 60
